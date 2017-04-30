@@ -1,0 +1,16 @@
+name = Fotografías
+description = Photos page theme.
+version = VERSION
+core = 7.x
+
+stylesheets[all][] = /css/resetHTML5.css
+stylesheets[all][] = /dist/css/bootstrap.min.css
+stylesheets[all][] = /css/style.css
+
+scripts[] = /dist/js/bootstrap.min.js
+scripts[] = /dist/js/main.js
+
+regions[header] = Header
+regions[content] = Content
+regions[footer] = Footer
+
