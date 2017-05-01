@@ -49,6 +49,11 @@ function gallery_access_views_pre_render(&$view){
   if ($current_path == "galerias") {
   	global $user;
     $role = array_search('cliente', $user->roles);
+    $anonimo = array_search('anonymous user', $user->roles);
+    
+    if ($anonimo) {
+      drupal_goto('gallery/access_denied');
+    }
     if (!$role) {
       drupal_goto('admin/galerias_admin');
     }
@@ -65,5 +70,12 @@ function gallery_access_download($fid){
   header('Content-Length: ' . filesize($url));
   readfile($url);
   //file_put_contents($file_name, fopen($url, 'r'));
+}
+
+function gallery_access_user_login(&$edit, $account){
+  $role = array_search('cliente', $account->roles);
+  if ($role) {
+    drupal_goto('galerias');
+  }
 }
 
