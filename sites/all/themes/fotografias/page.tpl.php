@@ -74,7 +74,10 @@
 ?>
 
 <div id="GeneralContent" class="container-fluid">
-
+  <nav class="nav_photos">
+    <img src="<?php print $logo ?>">
+  </nav>
+  <div id="space"></div>
   <div class="row">
     <?php if ($page['header']): ?>
       <div id="header">
@@ -95,13 +98,11 @@
     <?php endif; ?>
   </div>
 
-  <div class="row">
+  <div id="footer">
     <?php if ($page['footer']): ?>
-      <div id="footer">
-        <?php 
-          print render($page['footer']);
-        ?>
-      </div>
+      <?php 
+        print render($page['footer']);
+      ?>
     <?php endif; ?>
   </div>
 

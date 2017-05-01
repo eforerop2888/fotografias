@@ -1,0 +1,4 @@
+name = Core module
+description = Core module general configuration
+package = custom
+core = 7.x

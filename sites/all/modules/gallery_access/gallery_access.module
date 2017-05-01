@@ -1,0 +1,69 @@
+<?php 
+	
+/*
+ *
+ * @file
+ * Gallery Client Function
+ */
+
+function gallery_access_menu(){
+  $items['gallery/access_denied'] = array(
+    'title' => 'Acceso Denegado',
+    'page callback' => 'gallery_access_denied',
+    'access callback' => true,
+    'type' => MENU_CALLBACK
+  );
+
+  $items['download_img/%'] = array(
+    'title' => 'Descargar Imagen',
+    'page callback' => 'gallery_access_download',
+    'access callback' => true,
+    'page arguments' => array(1),
+    'type' => MENU_CALLBACK
+  );
+  return $items;
+}
+
+function gallery_access_preprocess_node(&$variables){
+  
+  global $user;
+  $role = array_search('cliente', $user->roles);
+  if ($role) {
+    if ($variables['node']->type == 'gallery') {
+      $current_user = $user->uid;
+      $gallery_user = $variables['node']->field_client['und'][0]['target_id'];
+      if ($current_user != $gallery_user) {
+  	    drupal_goto('gallery/access_denied');
+  	  }
+    }  
+  }
+  
+}
+
+function gallery_access_denied(){
+  return "Acceso Denegado";
+}
+
+function gallery_access_views_pre_render(&$view){
+  $current_path = current_path();
+  if ($current_path == "galerias") {
+  	global $user;
+    $role = array_search('cliente', $user->roles);
+    if (!$role) {
+      drupal_goto('admin/galerias_admin');
+    }
+  }
+  
+}
+
+function gallery_access_download($fid){
+  $file = file_load($fid);
+  $uri = $file->uri;
+  $url = file_create_url($uri);
+  header('Content-Type: application/octet-stream');
+  header('Content-Disposition: attachment; filename="' . basename($url) . '"');
+  header('Content-Length: ' . filesize($url));
+  readfile($url);
+  //file_put_contents($file_name, fopen($url, 'r'));
+}
+

@@ -1,0 +1,60 @@
+<?php
+
+/*
+ *
+ * @file
+ * Core, General configuration
+ */
+
+function core_block_info(){
+
+  $blocks['core_footer'] = array(
+    'info' => t('footer'),
+  );
+
+  return $blocks;
+}
+
+function core_block_view($delta = ''){
+
+  switch($delta){
+    case 'core_footer':
+      $block['subject'] = '';
+      $block['content'] = theme('footer', array('data' => variable_get('footer_content')));
+      break;
+  }
+  return $block;
+}
+
+/**
+ *Implement hook_theme
+ */
+function core_theme($existing, $type, $theme, $path){
+  return array(
+    'footer' => array(
+      'template' => 'templates/footer',
+    ),
+  );
+}
+
+function core_block_configure($delta = '') {
+  $form = array();
+  if ($delta == 'core_footer') {
+    $form['footer_content'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Digite el contenido del footer'),
+      '#default_value' => variable_get('footer_content', ''),
+    );
+  }
+
+  return $form;
+}
+
+function core_block_save($delta = '', $edit = array()) {
+  if ($delta == 'core_footer') {
+    variable_set('footer_content', $edit['footer_content']);
+  }
+}
+
+
+

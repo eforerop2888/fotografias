@@ -1,0 +1,68 @@
+.page-user {
+	background-attachment: fixed;
+    background-image: url("../images/fondo_login.jpeg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.nav_photos{
+	text-align: center;
+	background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
+	padding: 30px 0;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+}
+
+#GeneralContent{
+	padding: 0;
+}
+
+body.page-user #space{
+	padding: 35px 0;
+}
+
+label{
+	display: none;
+}
+
+#user-login .form-text{
+	width: 100%;
+	border: none;
+    border-bottom: 1px solid #222222;
+    color: #222222;
+    text-align: center;
+}
+.overlay_gallery_wrapper{
+    background-color: #fff;
+    padding: 10px;
+}
+
+.overlay_gallery_border{
+	border: solid 1px;
+	border-color: #222222;
+	padding: 10px;
+}
+
+#user-login .description{
+	display: none;
+}
+
+#user-login .form-submit{
+	background-color: #959595;
+	border-color: #959595;
+	color: #fff;
+}
+
+#user-login .form-actions{
+	text-align: center;
+}
+.icon_user{
+	padding: 20%;
+	background-image: url("../images/user.png");
+	background-size: 30%; 
+	background-repeat: no-repeat;
+	background-position: center;
+}
