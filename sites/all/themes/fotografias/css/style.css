@@ -1,4 +1,4 @@
-.page-user {
+.page-user, .page-gallery-access-denied {
 	background-attachment: fixed;
     background-image: url("../images/fondo_login.jpeg");
     background-position: center center;
@@ -24,6 +24,14 @@ body.page-user #space{
 	padding: 35px 0;
 }
 
+body.page-galerias #space{
+	padding: 60px 0;
+}
+
+#logo{
+	margin: 0 auto;
+}
+
 label{
 	display: none;
 }
@@ -38,6 +46,15 @@ label{
 .overlay_gallery_wrapper{
     background-color: #fff;
     padding: 10px;
+}
+
+.acceso_denegado{
+	background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
+	z-index: 1000;
+    margin: 20%;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
 }
 
 .overlay_gallery_border{
@@ -59,10 +76,31 @@ label{
 #user-login .form-actions{
 	text-align: center;
 }
+
 .icon_user{
 	padding: 20%;
 	background-image: url("../images/user.png");
 	background-size: 30%; 
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+#footer{
+	position: fixed;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.50) none repeat scroll 0 0;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	z-index: 1000;
+}
+
+.view-id-galeria .views-row {
+	padding: 0;
+}
+
+@media only screen and (max-width : 992px) { 
+	.acceso_denegado{
+	    margin: 50% 20%;
+	}	
 }

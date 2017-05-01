@@ -75,7 +75,7 @@
 
 <div id="GeneralContent" class="container-fluid">
   <nav class="nav_photos">
-    <img src="<?php print $logo ?>">
+    <img class="img-responsive" id="logo" src="<?php print $logo ?>">
   </nav>
   <div id="space"></div>
   <div class="row">

@@ -41,7 +41,7 @@ function gallery_access_preprocess_node(&$variables){
 }
 
 function gallery_access_denied(){
-  return "Acceso Denegado";
+  return "<div class='acceso_denegado'>Acceso Denegado</div>";
 }
 
 function gallery_access_views_pre_render(&$view){
