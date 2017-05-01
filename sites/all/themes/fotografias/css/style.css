@@ -24,7 +24,7 @@ body.page-user #space{
 	padding: 35px 0;
 }
 
-body.page-galerias #space{
+body.page-galerias #space, body.page-galeria #space{
 	padding: 60px 0;
 }
 
@@ -95,7 +95,7 @@ label{
 	z-index: 10;
 }
 
-.view-id-galeria .views-row {
+.view-id-galerias .views-row, .view-galeria-cliente .views-row{
 	padding: 0;
 }
 
@@ -144,4 +144,18 @@ label{
 	.acceso_denegado{
 	    margin: 50% 20%;
 	}	
+}
+
+.gallery_archive_desc{
+	display: none;
+	bottom: 0;
+    color: #ffffff;
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+}
+
+.view-id-galerias .views-row:hover .gallery_archive_desc{
+	display: block;
 }
