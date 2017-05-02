@@ -34,7 +34,7 @@
   <?php endif; ?>
   <?php print render($title_suffix); ?>
   <?php if ($header): ?>
-    <div class="view-header col-md-4 col-sm-12">
+    <div class="view-header col-md-12 col-sm-12">
       <?php print $header; ?>
     </div>
   <?php endif; ?>
@@ -52,7 +52,7 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-    <div class="view-content col-md-8 col-sm-12">
+    <div class="view-content col-md-12 col-sm-12">
       <?php print $rows; ?>
     </div>
   <?php elseif ($empty): ?>

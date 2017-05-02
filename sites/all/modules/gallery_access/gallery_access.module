@@ -14,18 +14,16 @@ function gallery_access_menu(){
     'type' => MENU_CALLBACK
   );
 
-  $items['download_img/%'] = array(
+  $items['galeria/download_img'] = array(
     'title' => 'Descargar Imagen',
     'page callback' => 'gallery_access_download',
     'access callback' => true,
-    'page arguments' => array(1),
     'type' => MENU_CALLBACK
   );
   return $items;
 }
 
 function gallery_access_preprocess_node(&$variables){
-  
   global $user;
   $role = array_search('cliente', $user->roles);
   if ($role) {
@@ -37,7 +35,6 @@ function gallery_access_preprocess_node(&$variables){
   	  }
     }  
   }
-  
 }
 
 function gallery_access_denied(){
@@ -61,21 +58,26 @@ function gallery_access_views_pre_render(&$view){
   
 }
 
-function gallery_access_download($fid){
-  $file = file_load($fid);
-  $uri = $file->uri;
-  $url = file_create_url($uri);
+function gallery_access_download(){
+  $url = $_GET['url'];
   header('Content-Type: application/octet-stream');
   header('Content-Disposition: attachment; filename="' . basename($url) . '"');
   header('Content-Length: ' . filesize($url));
   readfile($url);
-  //file_put_contents($file_name, fopen($url, 'r'));
 }
 
 function gallery_access_user_login(&$edit, $account){
   $role = array_search('cliente', $account->roles);
+  $administrador = array_search('administrator', $account->roles);
+  $fotografo = array_search('fotografo', $account->roles);
   if ($role) {
     drupal_goto('galerias');
+  }
+  if ($administrador) {
+    drupal_goto('admin/galerias_admin');
+  }
+  if ($fotografo) {
+    drupal_goto('admin/galerias_admin');
   }
 }
 

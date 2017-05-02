@@ -13,3 +13,13 @@ function fotografias_theme() {
   );
   return $items;
 }
+
+
+function fotografias_form_alter( &$form, &$form_state, $form_id ) {
+  if (TRUE === in_array( $form_id, array( 'user_login', 'user_login_block'))){
+    $form['name']['#attributes']['placeholder'] = t('Nombre de usuario');
+    $form['pass']['#attributes']['placeholder'] = t('Contraseña');
+  }
+}
+
+

@@ -71,11 +71,21 @@
 *
 * @ingroup themeable
 */
+global $base_url;
+global $user;
+$anonimo = array_search('anonymous user', $user->roles);
 ?>
 
 <div id="GeneralContent" class="container-fluid">
   <nav class="nav_photos">
     <img class="img-responsive" id="logo" src="<?php print $logo ?>">
+    <?php if (!$anonimo): ?>
+      <div class="logout_content">
+        <a href="<?php echo $base_url ?>/user/logout">
+          <img src="<?php echo $base_url . '/' . drupal_get_path('theme', 'fotografias') ?>/images/logout.png" width="20px">
+        </a>
+      </div>
+    <?php endif; ?>
   </nav>
   <div id="space"></div>
   <div class="row">
