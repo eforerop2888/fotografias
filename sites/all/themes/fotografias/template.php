@@ -22,4 +22,10 @@ function fotografias_form_alter( &$form, &$form_state, $form_id ) {
   }
 }
 
+function fotografias_preprocess_page(&$variables){
+  global $user;
+  if(user_is_logged_in() && current_path() == 'user/' . $user->uid){
+    drupal_goto('galerias');
+  }
+}
 
