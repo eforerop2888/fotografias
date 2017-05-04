@@ -64,7 +64,19 @@ function gallery_access_views_pre_render(&$view){
 }
 
 function gallery_access_download(){
+  global $user;
   $url = $_GET['url'];
+
+  //Se implementa API de evento log para crear nuevo tipo de log de descarga de archivo
+  $log = array(
+    'type' => 'Descarga',
+    'operation' => 'Imagen Galeria',
+    'description' => 'Descarga de imagen: <a href="' . $url . '" >' . $url . '</a>',
+    'uid' => $user->uid,
+  );
+  event_log_insert($log);
+  
+  //SE inicia procceso de descarga de la imagen
   $urle = explode('sites', $url);
   header('Content-Type: application/octet-stream');
   header('Content-Disposition: attachment; filename="' . basename('sites'.$urle[1]) . '"');
