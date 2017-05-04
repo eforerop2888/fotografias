@@ -78,7 +78,7 @@ $anonimo = array_search('anonymous user', $user->roles);
 
 <div id="GeneralContent" class="container-fluid">
   <nav class="nav_photos">
-    <img class="img-responsive" id="logo" src="<?php print $logo ?>">
+    <a href="<?php echo $base_url; ?>"><img class="img-responsive" id="logo" src="<?php print $logo ?>"></a>
     <?php if (!$anonimo): ?>
       <div class="logout_content">
         <a href="<?php echo $base_url ?>/user/logout">
