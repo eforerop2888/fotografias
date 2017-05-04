@@ -75,7 +75,7 @@ function gallery_access_download(){
   $log = array(
     'type' => 'Descarga',
     'operation' => 'Imagen Galeria',
-    'description' => 'Descarga de imagen: <a href="' . $url . '" >' . $url . '</a>',
+    'description' => 'Descarga de imagen: ' . $url,
     'uid' => $user->uid,
   );
   event_log_insert($log);
@@ -92,7 +92,7 @@ function gallery_access_user_login(&$edit, $account){
   $role = array_search('cliente', $account->roles);
   $administrador = array_search('administrator', $account->roles);
   $fotografo = array_search('fotografo', $account->roles);
-  $webmaster = array_search('webmaster', $user->roles);
+  $webmaster = array_search('webmaster', $account->roles);
   if ($role) {
     drupal_goto('galerias');
   }
