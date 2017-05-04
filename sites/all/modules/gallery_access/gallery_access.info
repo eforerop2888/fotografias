@@ -2,3 +2,4 @@ name = Gallery Access
 description = Gallery Access module
 package = custom
 core = 7.x
+dependencies[] = event_log

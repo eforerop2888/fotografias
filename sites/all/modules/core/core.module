@@ -56,5 +56,18 @@ function core_block_save($delta = '', $edit = array()) {
   }
 }
 
+/*
+ * Implements hook_user_login
+ */
+function core_user_login(&$edit, $account){
+  //Se implementa API de evento log para crear nuevo tipo de log
+  $log = array(
+    'type' => 'Sesión',
+    'operation' => 'Inicio Sesión',
+    'description' => 'Inicio de sesión: ' . $account->name,
+    'uid' => $account->uid,
+  );
+  event_log_insert($log);  
+}
 
 
