@@ -86,6 +86,13 @@ $anonimo = array_search('anonymous user', $user->roles);
         </a>
       </div>
     <?php endif; ?>
+    <?php if ($page['menu']): ?>
+      <div id="menu">
+        <?php 
+          print render($page['menu']);
+        ?>
+      </div>
+    <?php endif; ?>
   </nav>
   <div id="space"></div>
   <div class="row">

@@ -214,3 +214,19 @@ body.page-galeria .view-content {
 	right: 10px;
 	top: 30px;
 }
+
+.menu_ul {
+    list-style: none;
+    float: right;
+    text-align: right;
+    color: #fff;
+    display: none;
+}
+
+.menu_ul a {
+    color: #fff;
+}
+
+.menu_f:hover .menu_ul{
+    display:block;
+}

@@ -15,7 +15,7 @@
 
 #fancybox-buttons ul {
 	display: block;
-	width: 166px;
+	width: 92px;
 	height: 30px;
 	margin: 0 auto;
 	padding: 0;
@@ -78,7 +78,8 @@
 	background-position: 3px -60px;
 	border-left: 1px solid #111;
 	border-right: 1px solid #3e3e3e;
-	width: 35px
+	width: 35px;
+	display: none;
 }
 
 #fancybox-buttons a.btnToggleOn {
@@ -89,6 +90,7 @@
 	border-left: 1px solid #111;
 	width: 35px;
 	background-position: -56px 0px;
+	display: none;
 }
 
 #fancybox-buttons a.btnDisabled {

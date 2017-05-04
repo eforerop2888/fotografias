@@ -11,16 +11,30 @@ function core_block_info(){
   $blocks['core_footer'] = array(
     'info' => t('footer'),
   );
+  $blocks['core_menu'] = array(
+    'info' => t('menu'),
+  );
+
 
   return $blocks;
 }
 
 function core_block_view($delta = ''){
-
+  global $user;
+  $name = user_load($user->uid);
+  $user_name = $name->field_name['und'][0]['value'];
+  $imagenes = drupal_get_path('theme', 'fotografias');
+  global $base_url;
   switch($delta){
     case 'core_footer':
       $block['subject'] = '';
       $block['content'] = theme('footer', array('data' => variable_get('footer_content')));
+      break;
+    case 'core_menu':
+      $block['subject'] = '';
+      $block['content'] = theme('menu', array('base_url' => $base_url,
+       'user_name' => $user_name,
+       'imagenes' => $imagenes,));
       break;
   }
   return $block;
@@ -33,6 +47,9 @@ function core_theme($existing, $type, $theme, $path){
   return array(
     'footer' => array(
       'template' => 'templates/footer',
+    ),
+    'menu' => array(
+      'template' => 'templates/menu',
     ),
   );
 }
