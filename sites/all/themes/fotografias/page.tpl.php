@@ -80,18 +80,13 @@ $anonimo = array_search('anonymous user', $user->roles);
   <nav class="nav_photos">
     <a href="<?php echo $base_url; ?>"><img class="img-responsive" id="logo" src="<?php print $logo ?>"></a>
     <?php if (!$anonimo): ?>
-      <div class="logout_content">
-        <a href="<?php echo $base_url ?>/user/logout">
-          <img src="<?php echo $base_url . '/' . drupal_get_path('theme', 'fotografias') ?>/images/logout.png" width="20px">
-        </a>
-      </div>
-    <?php endif; ?>
-    <?php if ($page['menu']): ?>
-      <div id="menu">
-        <?php 
-          print render($page['menu']);
-        ?>
-      </div>
+      <?php if ($page['menu']): ?>
+        <div id="menu">
+          <?php 
+            print render($page['menu']);
+          ?>
+        </div>
+      <?php endif; ?>
     <?php endif; ?>
   </nav>
   <div id="space"></div>

@@ -221,6 +221,7 @@ body.page-galeria .view-content {
     text-align: right;
     color: #fff;
     display: none;
+    padding: 15px 0;
 }
 
 .menu_ul a {
@@ -230,3 +231,12 @@ body.page-galeria .view-content {
 .menu_f:hover .menu_ul{
     display:block;
 }
+.user_menu{
+    margin-right: 25px;
+    margin-top: 2px;
+    width: 30px;
+}
+.user_name{
+    font-weight: bold;
+}
+
