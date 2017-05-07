@@ -240,3 +240,6 @@ body.page-galeria .view-content {
     font-weight: bold;
 }
 
+.fancybox-overlay{
+    background: #000;
+}
