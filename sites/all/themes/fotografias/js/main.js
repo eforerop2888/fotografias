@@ -8,9 +8,17 @@ jQuery(document).ready(function () {
         jQuery(this).prev('img').fullscreen();
             return false;
     });
-    
-    jQuery(".view-galeria-cliente img").addClass("img-responsive");
-    jQuery(".view-id-galeria_fotos_todas img").addClass("img-responsive");
+    jQuery('.view-id-galeria_fotos_todas .view-content').sortablePhotos({
+      	selector: '> .my-item-photo',
+    	sortable: true,
+    	padding: 1
+  	});
+
+  	jQuery('.view-id-galeria_cliente .view-content').sortablePhotos({
+      	selector: '> .my-item-photo',
+    	sortable: true,
+    	padding: 1
+  	});
    
 });
 

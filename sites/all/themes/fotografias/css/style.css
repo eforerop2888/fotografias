@@ -259,4 +259,8 @@ body.page-galerias-todas .view-galeria-fotos-todas .view-content{
     cursor: pointer;
 }
 
+.favoritos{
+    position: absolute;
+}
+
 
