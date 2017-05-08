@@ -91,7 +91,8 @@ label{
 	z-index: 10;
 }
 
-.view-id-galerias .views-row, .view-galeria-cliente .views-row{
+.view-id-galerias .views-row, .view-galeria-cliente .views-row,
+.view-id-galeria_fotos_todas .views-row{
 	padding: 0;
 }
 
@@ -157,7 +158,7 @@ label{
 }
 
 .linkDownload, .linkDownload:hover{
-    color: #424242;
+    color: #fff;
     float: right;
 }
 
@@ -186,7 +187,7 @@ label{
     font-style: italic;
 }
 
-body.page-galeria #space{
+body.page-galerias- #space, body.page-galerias-todas #space{
 	padding: 0;
 }
 
@@ -194,7 +195,7 @@ body.page-galeria #space{
 	height: 60vh;
 }
 
-body.page-galeria .view-header {
+body.page-galerias- .view-header, body.page-galerias-todas .view-header{
 	padding: 0;
     background-image: url("../images/cover_galerias.jpeg");
     background-position: center center;
@@ -205,8 +206,9 @@ body.page-galeria .view-header {
     width: 100%;
 }
 
-body.page-galeria .view-content {
-	padding: 0;
+body.page-galerias- .view-galeria-cliente .view-content, 
+body.page-galerias-todas .view-galeria-fotos-todas .view-content{
+	padding: 0 !important;
 }
 
 .logout_content {
@@ -243,3 +245,12 @@ body.page-galeria .view-content {
 .fancybox-overlay{
     background: #000;
 }
+
+.fancybox-skin{
+    background: none;
+}
+
+.breadcrumb{
+    margin: 0;
+}
+

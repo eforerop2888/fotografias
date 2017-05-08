@@ -74,6 +74,7 @@
 global $base_url;
 global $user;
 $anonimo = array_search('anonymous user', $user->roles);
+print $breadcrumb;
 ?>
 
 <div id="GeneralContent" class="container-fluid">

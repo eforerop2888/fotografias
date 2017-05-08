@@ -14,7 +14,7 @@ function gallery_access_menu(){
     'type' => MENU_CALLBACK
   );
 
-  $items['galeria/download_img'] = array(
+  $items['galerias/download_img'] = array(
     'title' => 'Descargar Imagen',
     'page callback' => 'gallery_access_download',
     'access callback' => true,
