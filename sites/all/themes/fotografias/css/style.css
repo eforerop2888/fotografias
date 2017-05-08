@@ -254,3 +254,9 @@ body.page-galerias-todas .view-galeria-fotos-todas .view-content{
     margin: 0;
 }
 
+.requestfullscreen, .requestfullscreen:hover{
+    color: #fff;
+    cursor: pointer;
+}
+
+
