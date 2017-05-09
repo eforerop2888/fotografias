@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file
+ * This template is used to print a single field in a view.
+ *
+ * It is not actually used in default Views, as this is registered as a theme
+ * function which has better performance. For single overrides, the template is
+ * perfectly okay.
+ *
+ * Variables available:
+ * - $view: The view object
+ * - $field: The field handler object that can process the input
+ * - $row: The raw SQL result that can be used
+ * - $output: The processed output that will normally be used.
+ *
+ * When fetching output from the $row, this construct should be used:
+ * $data = $row->{$field->field_alias}
+ *
+ * The above will guarantee that you'll always get the correct data,
+ * regardless of any changes in the aliasing that might happen if
+ * the view is modified.
+ */
+?>
+<?php 
+global $user;
+$fid_current = $row->field_data_field_images_gallery_field_images_gallery_fid;
+$favorito = db_select('node', 'n')
+    ->fields('n')
+    ->condition('type', 'favoritos','=')
+    ->condition('uid', $user->uid,'=')
+    ->execute()
+    ->fetchAssoc();
+
+if(empty($favorito)){
+  echo "X";
+}else{
+  $result = db_select('field_data_field_fotos_favoritas', 'fav')
+    ->fields('fav')
+    ->condition('entity_id', $favorito['nid'],'=')
+    ->condition('field_fotos_favoritas_fid', $fid_current,'=')
+    ->execute()
+    ->fetchAssoc();
+
+  if(empty($result)){
+    echo "X";
+  }else{
+    echo "N";
+  }
+}
+?>
+
+<?php 
+print $output;
+?>
