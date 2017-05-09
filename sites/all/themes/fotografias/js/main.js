@@ -9,16 +9,22 @@ jQuery(document).ready(function () {
             return false;
     });
     jQuery('.view-id-galeria_fotos_todas .view-content').sortablePhotos({
-      	selector: '> .my-item-photo',
+      selector: '> .my-item-photo',
     	sortable: true,
     	padding: 1
   	});
 
   	jQuery('.view-id-galeria_cliente .view-content').sortablePhotos({
-      	selector: '> .my-item-photo',
+      selector: '> .my-item-photo',
     	sortable: true,
     	padding: 1
   	});
+
+    jQuery('.view-id-favoritos .view-content').sortablePhotos({
+      selector: '> .my-item-photo',
+      sortable: true,
+      padding: 1
+    });
    
 });
 

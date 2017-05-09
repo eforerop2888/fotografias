@@ -10,6 +10,9 @@
 	  <a href="<?php echo $base_url; ?>/galerias/todas">
 	    <li>Mis Fotos</li>
 	  </a>
+	  <a href="<?php echo $base_url; ?>/galerias/favoritos">
+	    <li>Mis Favoritos</li>
+	  </a>
 	  <a href="<?php echo $base_url; ?>/user/logout">
 	    <li>Cerrar Sesión</li>
 	  </a>

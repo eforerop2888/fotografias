@@ -6,6 +6,18 @@
  * Core, General configuration
  */
 
+function core_menu(){
+  $items['add/favorite/%'] = array(
+    'title' => 'Agregando favorito',
+    'page callback' => 'favorite',
+    'page arguments' => array(2),
+    'access callback' => true,
+    'type' => MENU_CALLBACK
+  );
+  return $items;
+}
+
+
 function core_block_info(){
 
   $blocks['core_footer'] = array(
@@ -85,6 +97,80 @@ function core_user_login(&$edit, $account){
     'uid' => $account->uid,
   );
   event_log_insert($log);  
+}
+
+function favorite($fid){
+  global $user;
+  $result = db_select('node', 'n')
+    ->fields('n')
+    ->condition('type', 'favoritos','=')
+    ->condition('uid', $user->uid,'=')
+    ->execute()
+    ->fetchAssoc();
+
+  if(empty($result)){
+    add_favorite($fid);
+  }else{
+    update_favorite($fid, $result['nid']);
+  }
+}
+
+
+function add_favorite($fid){
+  global $user;
+  $file = file_load($fid);
+  $title = 'favoritos-' . $user->uid;
+  $node = new stdClass();
+  $node->uid      = $user->uid;
+  $node->type     = 'favoritos';
+  node_object_prepare($node);
+  $node->title    = $title;
+  $node->status   = 1;
+  $node->promote  = 0;
+  $node->sticky   = 0;
+  $node->language = 'es';
+
+  $node->field_fotos_favoritas[LANGUAGE_NONE][] = array(
+    'fid' => $file->fid,
+    'filename' => $file->filename,
+    'filemime' => $file->filemime,
+    'uid' => $user->uid,
+    'uri' => $file->uri,
+    'status' => 1
+  );
+
+  node_save($node);
+
+  $commands[] = ajax_command_replace('.output-favorite-' . $fid, 's');
+  $page = array('#type' => 'ajax', '#commands' => $commands);
+  ajax_deliver($page);
+}
+
+function update_favorite($fid, $nid){
+  $node = node_load($nid);
+  $file = file_load($fid);
+
+  $node->field_fotos_favoritas[LANGUAGE_NONE][] = array(
+    'fid' => $file->fid,
+    'filename' => $file->filename,
+    'filemime' => $file->filemime,
+    'uid' => $user->uid,
+    'uri' => $file->uri,
+    'status' => 1
+  );
+
+  node_save($node);
+
+  $commands[] = ajax_command_replace('.output-favorite-' . $fid, 'u');
+  $page = array('#type' => 'ajax', '#commands' => $commands);
+  ajax_deliver($page);
+}
+
+function core_views_pre_render(&$view){
+  //if ($current_path == "galerias/todas") {
+    drupal_add_library('system', 'drupal.ajax');
+    drupal_add_library('system', 'jquery.form');
+  //}
 }
 
 
