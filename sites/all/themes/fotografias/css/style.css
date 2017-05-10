@@ -256,13 +256,19 @@ body.page-galerias-favoritos .view-favoritos .view-content{
 .menu_f:hover .menu_ul{
     display:block;
 }
+
 .user_menu{
     margin-right: 25px;
     margin-top: 15px;
     width: 30px;
     margin-bottom: 75px;
 }
+
 .user_name{
+    font-style: italic;
+}
+
+.menu_f a, .menu_f li{
     font-weight: bold;
 }
 

@@ -4,18 +4,18 @@
 	</div>
 	<ul class="menu_ul">
 	  <li class="user_name"><?php echo $user_name; ?></li>
-	  <a href="<?php echo $base_url; ?>">
-	    <li>Mis Galerías</li>
-	  </a>
-	  <a href="<?php echo $base_url; ?>/galerias/todas">
-	    <li>Mis Fotos</li>
-	  </a>
-	  <a href="<?php echo $base_url; ?>/galerias/favoritos">
-	    <li>Mis Favoritos</li>
-	  </a>
-	  <a href="<?php echo $base_url; ?>/user/logout">
-	    <li>Cerrar Sesión</li>
-	  </a>
+	  <li>
+	  	<a href="<?php echo $base_url; ?>">Mis Galerías</a>
+	  </li>
+	  <li>
+	  	<a href="<?php echo $base_url; ?>/galerias/todas">Mis Fotos</a>
+	  </li>
+	  <li>
+	  	<a href="<?php echo $base_url; ?>/galerias/favoritos">Mis Favoritos</a>
+	  </li>
+	  <li>
+	    <a href="<?php echo $base_url; ?>/user/logout">Cerrar Sesión</a>
+	  </li>
 	</ul>
 	</div>
 </div>
