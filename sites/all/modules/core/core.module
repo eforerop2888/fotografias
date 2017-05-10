@@ -101,17 +101,28 @@ function core_user_login(&$edit, $account){
 
 function favorite($fid){
   global $user;
-  $result = db_select('node', 'n')
+  $node_favorito = db_select('node', 'n')
     ->fields('n')
     ->condition('type', 'favoritos','=')
     ->condition('uid', $user->uid,'=')
     ->execute()
     ->fetchAssoc();
 
-  if(empty($result)){
+  if(empty($node_favorito)){
     add_favorite($fid);
   }else{
-    update_favorite($fid, $result['nid']);
+    $img_favorito = db_select('field_data_field_fotos_favoritas', 'fav')
+      ->fields('fav')
+      ->condition('entity_id ', $node_favorito['nid'],'=')
+      ->condition('field_fotos_favoritas_fid', $fid,'=')
+      ->condition('bundle', 'favoritos','=')
+      ->execute()
+      ->fetchAssoc();
+    if(empty($img_favorito)){
+      update_favorite($fid, $node_favorito['nid']);
+    }else{
+      delete_favorite($fid, $node_favorito['nid']);
+    }
   }
 }
 
@@ -141,7 +152,7 @@ function add_favorite($fid){
 
   node_save($node);
 
-  $commands[] = ajax_command_replace('.output-favorite-' . $fid, 's');
+  $commands[] = ajax_command_replace('.output-favorite-' . $fid . ' span', '<span class="favorito_icono_noclic favorito_icono"></span>');
   $page = array('#type' => 'ajax', '#commands' => $commands);
   ajax_deliver($page);
 }
@@ -161,7 +172,25 @@ function update_favorite($fid, $nid){
 
   node_save($node);
 
-  $commands[] = ajax_command_replace('.output-favorite-' . $fid, 'u');
+  $commands[] = ajax_command_replace('.output-favorite-' . $fid . ' span', '<span class="favorito_icono_noclic favorito_icono"></span>');
+  $page = array('#type' => 'ajax', '#commands' => $commands);
+  ajax_deliver($page);
+}
+
+function delete_favorite($fid, $nid){
+  db_delete('field_data_field_fotos_favoritas')
+    ->condition('entity_id ', $nid, '=')
+    ->condition('field_fotos_favoritas_fid', $fid,'=')
+    ->condition('bundle', 'favoritos', '=')
+    ->execute();
+
+  db_delete('field_revision_field_fotos_favoritas')
+    ->condition('entity_id ', $nid, '=')
+    ->condition('field_fotos_favoritas_fid', $fid,'=')
+    ->condition('bundle', 'favoritos','=')
+    ->execute();
+
+  $commands[] = ajax_command_replace('.output-favorite-' . $fid . ' span', '<span class="favorito_icono_clic favorito_icono"></span>');
   $page = array('#type' => 'ajax', '#commands' => $commands);
   ajax_deliver($page);
 }
