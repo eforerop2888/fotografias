@@ -213,11 +213,13 @@ body.page-galerias-favoritos #space{
 
 .image_cover{
 	height: 60vh;
+    position: relative;
 }
 
 body.page-galerias- .view-header, 
 body.page-galerias-todas .view-header,
-body.page-galerias-favoritos .view-header{
+body.page-galerias-favoritos .view-header,
+body.page-nube-tags .view-header{
 	padding: 0;
     background-image: url("../images/cover_galerias_2.jpeg");
     background-position: center center;
@@ -325,4 +327,33 @@ body.page-galerias-favoritos .view-favoritos .view-content{
     width: 20px;
     margin-top: 5px;
     margin-right: 3px;
+}
+
+.cloud {
+    display: inline;
+    list-style-type: none;
+    width: 400px;
+}
+.cloud li {
+    list-style: none;
+    display: inline;
+}
+
+.cloud li:nth-of-type(2n + 1) {
+    font-size: 2.75em;
+}
+.cloud li:nth-of-type(3n + 1) {
+    font-size: 2.25em;
+}
+.cloud li:nth-of-type(4n + 3) {
+    font-size: 3em;
+}
+.cloud li:nth-of-type(5n - 3) {
+    font-size: 2em;
+}
+
+ul.cloud li{
+    display: inline-block;
+    margin: 0;
+    font-size: 1.5em;
 }

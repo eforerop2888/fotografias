@@ -91,7 +91,7 @@ print $breadcrumb;
     <?php endif; ?>
   </nav>
   <div id="space"></div>
-  <div class="row">
+  <div id="cabecera" class="row">
     <?php if ($page['header']): ?>
       <div id="header">
         <?php 
@@ -101,7 +101,7 @@ print $breadcrumb;
     <?php endif; ?>
   </div>  
 
-  <div class="row">
+  <div id="contenido" class="row">
     <?php if ($page['content']): ?>
       <div id="content">
         <?php 
