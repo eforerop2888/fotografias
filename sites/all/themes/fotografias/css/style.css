@@ -104,6 +104,7 @@ label{
 .view-id-galerias .views-row, .view-galeria-cliente .views-row,
 .view-id-galeria_fotos_todas .views-row{
 	padding: 0;
+    position: relative;
 }
 
 #page_caption {
@@ -356,4 +357,27 @@ ul.cloud li{
     display: inline-block;
     margin: 0;
     font-size: 1.5em;
+}
+
+
+
+@media screen and (max-width: 480px){
+  .slv-grid[data-columns]::before {
+    content: '1 .slv-column.size-1of1';
+  }
+}
+@media screen and (min-width: 481px) and (max-width:768px) {
+  .slv-grid[data-columns]::before {
+    content: '2 .slv-column.size-1of2';
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .slv-grid[data-columns]::before {
+    content: '3 .slv-column.size-1of3';
+  }
+}
+@media screen and (min-width: 992px){
+  .slv-grid[data-columns]::before {
+    content: '4 .slv-column.size-1of4';
+  }
 }
