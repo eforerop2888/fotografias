@@ -14,6 +14,9 @@
 	  	<a href="<?php echo $base_url; ?>/galerias/favoritos">Mis Favoritos</a>
 	  </li>
 	  <li>
+	  	<a href="<?php echo $base_url; ?>/nube-tags">Tags</a>
+	  </li>
+	  <li>
 	    <a href="<?php echo $base_url; ?>/user/logout">Cerrar Sesión</a>
 	  </li>
 	</ul>
