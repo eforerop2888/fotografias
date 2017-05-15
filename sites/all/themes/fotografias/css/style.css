@@ -341,21 +341,17 @@ body.page-galerias-favoritos .view-favoritos .view-content{
     display: inline;
 }
 
-.cloud a:nth-of-type(2n + 1) {
-    font-size: 2.75em;
-    color: #9E015A !important;
+.cloud li:nth-of-type(2n + 1) {
+    font-size: 2.30em;
 }
-.cloud a:nth-of-type(3n + 1) {
-    font-size: 2.25em;
-    color: #0FC1A9 !important;   
+.cloud li:nth-of-type(3n + 1) {
+    font-size: 3.5em;   
 }
-.cloud a:nth-of-type(4n + 3) {
-    font-size: 3em;
-    color: #959A22 !important;   
+.cloud li:nth-of-type(4n + 3) {
+    font-size: 2.50em;   
 }
-.cloud a:nth-of-type(5n - 3) {
-    font-size: 2em;
-    color: #155697 !important;
+.cloud li:nth-of-type(5n - 3) {
+    font-size: 1.75em;
 }
 
 ul.cloud li{
