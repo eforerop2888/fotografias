@@ -53,7 +53,7 @@
 
   <?php if ($rows): ?>
     <div class="col-md-3"></div>
-    <div class="view-content col-md-6">
+    <div class="view-content col-md-6 cloud-tags">
       <?php print $rows; ?>
     </div>
     <div class="col-md-3"></div>

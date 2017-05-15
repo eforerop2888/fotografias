@@ -220,7 +220,8 @@ body.page-galerias-favoritos #space{
 body.page-galerias- .view-header, 
 body.page-galerias-todas .view-header,
 body.page-galerias-favoritos .view-header,
-body.page-nube-tags .view-header{
+body.page-nube-tags .view-header,
+body.page-fotos-tags- .view-header{
 	padding: 0;
     background-image: url("../images/cover_galerias_2.jpeg");
     background-position: center center;
@@ -340,17 +341,21 @@ body.page-galerias-favoritos .view-favoritos .view-content{
     display: inline;
 }
 
-.cloud li:nth-of-type(2n + 1) {
+.cloud a:nth-of-type(2n + 1) {
     font-size: 2.75em;
+    color: #9E015A !important;
 }
-.cloud li:nth-of-type(3n + 1) {
+.cloud a:nth-of-type(3n + 1) {
     font-size: 2.25em;
+    color: #0FC1A9 !important;   
 }
-.cloud li:nth-of-type(4n + 3) {
+.cloud a:nth-of-type(4n + 3) {
     font-size: 3em;
+    color: #959A22 !important;   
 }
-.cloud li:nth-of-type(5n - 3) {
+.cloud a:nth-of-type(5n - 3) {
     font-size: 2em;
+    color: #155697 !important;
 }
 
 ul.cloud li{
@@ -359,7 +364,14 @@ ul.cloud li{
     font-size: 1.5em;
 }
 
+.cloud-tags {
+    text-align: center;
+    padding: 30px 0;
+}
 
+.fancybox img {
+    padding: 3px;
+}
 
 @media screen and (max-width: 480px){
   .slv-grid[data-columns]::before {
