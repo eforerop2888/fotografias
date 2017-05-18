@@ -407,7 +407,8 @@ ul.cloud li{
 }
 
 .view-id-galerias .views-row img, .view-galeria-cliente .views-row img,
-.view-id-galeria_fotos_todas .views-row img, .view-id-favoritos .views-row img{
+.view-id-galeria_fotos_todas .views-row img, .view-id-favoritos .views-row img,
+.view-id-fotos_tags .views-row img{
     height: auto;
     max-width: 100%;
 }
