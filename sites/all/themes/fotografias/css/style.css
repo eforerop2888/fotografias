@@ -370,22 +370,44 @@ ul.cloud li{
 }
 
 @media screen and (max-width: 480px){
-  .slv-grid[data-columns]::before {
-    content: '1 .slv-column.size-1of1';
-  }
+    .views-row.col-lg-4{
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+        width: 100%;
+    }
 }
 @media screen and (min-width: 481px) and (max-width:768px) {
-  .slv-grid[data-columns]::before {
-    content: '2 .slv-column.size-1of2';
+    .views-row.col-lg-4{
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+        width: 50%; 
   }
 }
 @media screen and (min-width: 769px) and (max-width: 992px) {
-  .slv-grid[data-columns]::before {
-    content: '3 .slv-column.size-1of3';
-  }
+    .views-row.col-lg-4{
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+        width: 33%;
+    }
 }
 @media screen and (min-width: 992px){
-  .slv-grid[data-columns]::before {
-    content: '4 .slv-column.size-1of4';
-  }
+    .views-row.col-lg-4{
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+        width: 25%;
+    }
+}
+
+.view-id-galerias .views-row img, .view-galeria-cliente .views-row img,
+.view-id-galeria_fotos_todas .views-row img, .view-id-favoritos .views-row img{
+    height: auto;
+    max-width: 100%;
 }
