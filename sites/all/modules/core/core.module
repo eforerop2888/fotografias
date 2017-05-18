@@ -202,4 +202,30 @@ function core_views_pre_render(&$view){
   //}
 }
 
+function core_taxonomy_term_presave($term) {
+  // Change existing term? Nothing to do!
+  if ((isset($term->tid)) && ($term->tid > 0)) {
+    return;
+    }
+  
+  // Lookup the term in the given vocabulary
+  $query = new EntityFieldQuery;
+  $result = $query
+    ->entityCondition('entity_type', 'taxonomy_term')
+    ->propertyCondition('name', $term->name)
+    ->propertyCondition('vid', $term->vid)
+    ->execute();
+  
+  // Term doesn't exist: handle it the normal way
+  if (empty($result['taxonomy_term'])) {
+    return;
+    }
+  
+  // Term exists already: update it
+  $termslist = array_keys($result['taxonomy_term']);
+  $tid = array_shift($termslist);
+  $term->tid = $tid;
+  $original = taxonomy_term_load($tid);
+  $term->original = $original;
+}
 
