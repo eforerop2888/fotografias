@@ -94,7 +94,7 @@ function gallery_access_user_login(&$edit, $account){
   $fotografo = array_search('fotografo', $account->roles);
   $webmaster = array_search('webmaster', $account->roles);
   if ($role) {
-    drupal_goto('galerias');
+    drupal_goto('galerias/todas');
   }
   if ($administrador) {
     drupal_goto('admin/galerias_admin');

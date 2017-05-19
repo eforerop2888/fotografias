@@ -3,21 +3,21 @@
 	  <img class="user_menu" src="<?php echo $base_url . '/' . $imagenes ?>/images/user_menu.png">
 	</div>
 	<ul class="menu_ul">
-	  <li class="user_name"><?php echo $user_name; ?></li>
+	  <li class="user_name"><?php echo strtoupper($user_name); ?></li>
 	  <li>
-	  	<a href="<?php echo $base_url; ?>">Mis Galerías</a>
+	  	<a href="<?php echo $base_url; ?>">MIS GALERÍAS</a>
 	  </li>
 	  <li>
-	  	<a href="<?php echo $base_url; ?>/galerias/todas">Mis Fotos</a>
+	  	<a href="<?php echo $base_url; ?>/galerias/todas">MIS FOTOS</a>
 	  </li>
 	  <li>
-	  	<a href="<?php echo $base_url; ?>/galerias/favoritos">Mis Favoritos</a>
+	  	<a href="<?php echo $base_url; ?>/galerias/favoritos">MIS FAVORITOS</a>
 	  </li>
 	  <li>
-	  	<a href="<?php echo $base_url; ?>/nube-tags">Tags</a>
+	  	<a href="<?php echo $base_url; ?>/nube-tags">TAGS</a>
 	  </li>
 	  <li>
-	    <a href="<?php echo $base_url; ?>/user/logout">Cerrar Sesión</a>
+	    <a href="<?php echo $base_url; ?>/user/logout">CERRAR SESIÓN</a>
 	  </li>
 	</ul>
 	</div>
