@@ -25,37 +25,27 @@
 <?php 
 global $user;
 global $base_url;
-$fid_current = $row->field_data_field_images_gallery_field_images_gallery_fid;
+$fid_current = $row->field_data_field_fotos_favoritas_field_fotos_favoritas_fid;
 
-$favorito = db_select('node', 'n')
-    ->fields('n')
-    ->condition('type', 'favoritos','=')
-    ->condition('uid', $user->uid,'=')
-    ->execute()
-    ->fetchAssoc();
-
-if(empty($favorito)){
-  $icono = "favorito_icono_clic";
-}else{
-  $result = db_select('field_data_field_fotos_favoritas', 'fav')
+$result = db_select('field_data_field_fotos_favoritas', 'fav')
     ->fields('fav')
-    ->condition('entity_id', $favorito['nid'],'=')
+    ->condition('entity_id', $row->nid, '=')
     ->condition('field_fotos_favoritas_fid', $fid_current,'=')
     ->execute()
     ->fetchAssoc();
 
-  if(empty($result)){
-    $icono = "favorito_icono_clic";
-  }else{
-    $icono = "favorito_icono_noclic";
-  }
+if(empty($result)){
+  $icono = "favorito_icono_clic";
+}else{
+  $icono = "favorito_icono_noclic";
 }
+
 
 $html_favorito  = "<div class='content-link-favorite'>";
 $html_favorito .= "<a href='" . $base_url . "/add/favorite/" . $fid_current . "' class='use-ajax output-favorite-" . $fid_current . "'><span class='" . $icono ." favorito_icono'></span></a>";
 $html_favorito .= "</div>";
 echo $html_favorito;
- 
+
 print $output;
 ?>
 

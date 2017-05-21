@@ -25,7 +25,7 @@
 <?php 
 global $user;
 global $base_url;
-$fid_current = $row->field_data_field_images_gallery_field_images_gallery_fid;
+$fid_current = $row->fid;
 
 $favorito = db_select('node', 'n')
     ->fields('n')
@@ -55,7 +55,7 @@ $html_favorito  = "<div class='content-link-favorite'>";
 $html_favorito .= "<a href='" . $base_url . "/add/favorite/" . $fid_current . "' class='use-ajax output-favorite-" . $fid_current . "'><span class='" . $icono ." favorito_icono'></span></a>";
 $html_favorito .= "</div>";
 echo $html_favorito;
- 
+
 print $output;
 ?>
 
