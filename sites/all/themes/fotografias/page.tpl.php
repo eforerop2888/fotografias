@@ -79,7 +79,7 @@ print $breadcrumb;
 
 <div id="GeneralContent" class="container-fluid">
   <nav class="nav_photos">
-    <a href="<?php echo $base_url; ?>"><img class="img-responsive" id="logo" src="<?php print $logo ?>"></a>
+    <a href="<?php echo $base_url; ?>/galerias/todas"><img class="img-responsive" id="logo" src="<?php print $logo ?>"></a>
     <?php if (!$anonimo): ?>
       <?php if ($page['menu']): ?>
         <div id="menu">

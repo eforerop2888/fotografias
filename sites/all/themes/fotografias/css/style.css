@@ -8,8 +8,8 @@ body{
 }
 
 .page-user, .page-gallery-access-denied {
-	background-attachment: fixed;
-    background-image: url("../images/fondo_login.jpeg");
+    background-attachment: fixed;
+    background-image: url("../images/cover_galerias_2.jpeg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,36 +17,36 @@ body{
 }
 
 .nav_photos{
-	text-align: center;
-	/*background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;*/
-    background-image: url('../images/paisaje.jpg');
-    background-position: center;
-	padding: 10px 40px;
-	position: fixed;
-	width: 100%;
-	z-index: 10;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    /*background-image: url('../images/paisaje.jpg');
+    background-position: center;*/
+    padding: 2px 40px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
 
 #GeneralContent{
-	padding: 0;
+    padding: 0;
 }
 
 body #space{
-	padding: 43px 0 !important;
+    padding: 35px 0 !important;
 }
 
 #logo{
-	margin: 0 auto;
+    margin: 0 auto;
     width: 300px;
 }
 
 label{
-	display: none;
+    display: none;
 }
 
 #user-login .form-text{
-	width: 100%;
-	border: none;
+    width: 100%;
+    border: none;
     border-bottom: 1px solid #222222;
     color: #222222;
     text-align: center;
@@ -54,12 +54,12 @@ label{
 .overlay_gallery_wrapper{
     background-color: #fff;
     padding: 10px;
-    margin: 10% 0;
+    margin: 20% 0;
 }
 
 .acceso_denegado{
-	background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
-	z-index: 10;
+    background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
+    z-index: 10;
     margin: 20%;
     font-size: 30px;
     color: #fff;
@@ -67,46 +67,46 @@ label{
 }
 
 .overlay_gallery_border{
-	border: solid 1px;
-	border-color: #222222;
-	padding: 10px;
+    border: solid 1px;
+    border-color: #222222;
+    padding: 10px;
 }
 
 #user-login .description{
-	display: none;
+    display: none;
 }
 
 #user-login .form-submit{
-	background-color: #959595;
-	border-color: #959595;
-	color: #fff;
+    background-color: #959595;
+    border-color: #959595;
+    color: #fff;
 }
 
 #user-login .form-actions{
-	text-align: center;
+    text-align: center;
 }
 
 .icon_user{
-	padding: 20%;
-	background-image: url("../images/user.png");
-	background-size: 30%; 
-	background-repeat: no-repeat;
-	background-position: center;
+    padding: 20%;
+    background-image: url("../images/user.png");
+    background-size: 30%; 
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #footer{
-	position: fixed;
-	bottom: 0;
-	background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
-	color: #fff;
-	width: 100%;
-	text-align: center;
-	z-index: 10;
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
 }
 
 .view-id-galerias .views-row, .view-galeria-cliente .views-row,
 .view-id-galeria_fotos_todas .views-row{
-	padding: 0;
+    padding: 0;
     position: relative;
 }
 
@@ -148,12 +148,13 @@ label{
 }
 
 .row{
-	margin: 0;
+    margin: 0;
 }
 
 @media only screen and (max-width : 400px) {
     .nav_photos{
-        padding: 30px 0
+        padding: 5px 0
+        
     }
 
     .menu_ul {
@@ -162,14 +163,14 @@ label{
 } 
 
 @media only screen and (max-width : 992px) { 
-	.acceso_denegado{
-	    margin: 50% 20%;
-	}
+    .acceso_denegado{
+        margin: 50% 20%;
+    }
     .user_menu{
         margin-right: 0 !important;
         margin-top: 10px !important;
         width: 30px;
-        margin-bottom: 60px;
+        margin-bottom: 18px;
         float: right;
     }
 
@@ -179,7 +180,7 @@ label{
 
     .menu_ul {
         display: none;
-        padding: 50px 0 0 15px !important;
+        padding: 8px !important;
         position: absolute;
         right: 40px;
         top: 40px;
@@ -205,17 +206,22 @@ label{
     }
 
     .nav_photos{
-        height: 120px
+        height: 63px;
+        position:relative;
     }
 
     body #space{
-        padding: 60px 0;
+        padding: 0 !important;
+    }
+    
+    .overlay_gallery_wrapper{
+        margin: 15% 0 30% 0 !important;
     }
 }
 
 .gallery_archive_desc{
-	display: block;
-	bottom: 0;
+    display: block;
+    bottom: 0;
     color: #ffffff;
     position: absolute;
     width: 100%;
@@ -224,7 +230,7 @@ label{
 }
 
 .view-id-galerias .views-row:hover .gallery_archive_desc{
-	display: block;
+    display: block;
 }
 
 .linkDownload, .linkDownload:hover{
@@ -233,7 +239,7 @@ label{
 }
 
 .fancybox-skin{
-	padding: 25px 15px !important;
+    padding: 25px 15px !important;
 }
 
 .leyend_cover {
@@ -260,11 +266,11 @@ label{
 body.page-galerias- #space, 
 body.page-galerias-todas #space,
 body.page-galerias-favoritos #space{
-	padding: 0;
+    padding: 0;
 }
 
 .image_cover{
-	height: 60vh;
+    height: 60vh;
     position: relative;
 }
 
@@ -274,7 +280,7 @@ body.page-galerias-favoritos .view-header,
 body.page-nube-tags .view-header,
 body.page-fotos-tags- .view-header,
 body.page-galerias .view-header{
-	padding: 0;
+    padding: 0;
     background-image: url("../images/cover_galerias_2.jpeg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -287,7 +293,7 @@ body.page-galerias .view-header{
 body.page-galerias- .view-galeria-cliente .view-content, 
 body.page-galerias-todas .view-galeria-fotos-todas .view-content,
 body.page-galerias-favoritos .view-favoritos .view-content{
-	padding: 0 !important;
+    padding: 0 !important;
 }
 
 .logout_content {
@@ -328,7 +334,7 @@ body.page-galerias-favoritos .view-favoritos .view-content{
 }
 
 .fancybox-overlay{
-    background: #000;
+    background: rgba(0, 0, 0, 0.8) !important;
 }
 
 .fancybox-skin{
@@ -391,7 +397,7 @@ body.page-galerias-favoritos .view-favoritos .view-content{
     display: inline;
 }
 
-.cloud li:nth-of-type(2n + 1) {
+/*.cloud li:nth-of-type(2n + 1) {
     font-size: 2.30em;
 }
 .cloud li:nth-of-type(3n + 1) {
@@ -402,12 +408,12 @@ body.page-galerias-favoritos .view-favoritos .view-content{
 }
 .cloud li:nth-of-type(5n - 3) {
     font-size: 1.75em;
-}
+}*/
 
 ul.cloud li{
     display: inline-block;
     margin: 0;
-    font-size: 1.5em;
+    font-size: 2.8em;
 }
 
 .cloud-tags {
@@ -461,4 +467,22 @@ ul.cloud li{
 .view-id-fotos_tags .views-row img{
     height: auto;
     max-width: 100%;
+}
+
+.botton_filtro {
+    display: block;
+    width: 180px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 3px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.page-galerias .view-header p {
+    padding: 5px;
+    background-color: #fff;
+    margin: 2px;
 }

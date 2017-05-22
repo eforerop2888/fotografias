@@ -8,7 +8,9 @@ jQuery(document).ready(function () {
         jQuery(this).prev('img').fullscreen();
             return false;
     });
+	jQuery('.cloud a').append('-');
    
 });
+
 
 
