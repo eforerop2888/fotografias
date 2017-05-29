@@ -104,7 +104,8 @@ print $breadcrumb;
   <div id="contenido" class="row">
     <?php if ($page['content']): ?>
       <div id="content">
-        <?php 
+        <?php
+          print render($messages);
           print render($page['content']);
         ?>
       </div>

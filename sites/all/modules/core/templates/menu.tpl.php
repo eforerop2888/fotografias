@@ -17,6 +17,9 @@
 	  	<a href="<?php echo $base_url; ?>/nube-tags">EVENTOS</a>
 	  </li>
 	  <li>
+	  	<a href="<?php echo $base_url; ?>/contacto">CONTACTO</a>
+	  </li>
+	  <li>
 	    <a href="<?php echo $base_url; ?>/user/logout">CERRAR SESIÓN</a>
 	  </li>
 	</ul>

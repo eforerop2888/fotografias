@@ -34,7 +34,12 @@ function core_block_info(){
 function core_block_view($delta = ''){
   global $user;
   $name = user_load($user->uid);
-  $user_name = $name->field_name['und'][0]['value'];
+  if(!empty($name->field_name)){
+    $user_name = $name->field_name['und'][0]['value'];
+  }else{
+    $user_name = '';
+  }
+  
   $imagenes = drupal_get_path('theme', 'fotografias');
   global $base_url;
   switch($delta){
