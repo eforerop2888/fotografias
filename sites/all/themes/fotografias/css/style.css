@@ -44,7 +44,7 @@ body #space{
     display: none;
 }
 
-#user-login .form-text, #user-pass .form-text{
+#user-login .form-text, #user-pass .form-text, #user-profile-form .form-text{
     width: 100%;
     border: none;
     border-bottom: 1px solid #222222;
@@ -77,7 +77,7 @@ body #space{
     display: none;
 }
 
-#user-login .form-submit, #user-pass .form-submit{
+#user-login .form-submit, #user-pass .form-submit, #user-profile-form .form-submit{
     background-color: #959595;
     border-color: #959595;
     color: #fff;
@@ -533,4 +533,41 @@ ul.cloud li{
 
 #form-contacto h3{
     text-align: center;
+}
+
+/*cambio de contraseña*/
+
+.confirm-parent, .password-parent {
+    width: 100%;
+}
+
+div.form-item div.password-suggestions{
+    width: 100%
+}
+
+div.password-confirm{
+    margin-top: 0.5em;
+}
+
+.password-strength{
+    margin-bottom: 1.4em;
+}
+
+.password-strength{
+    float: none;
+}
+
+.aboton {
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.div_boton_tags{
+    background: #fff none repeat scroll 0 0;
+    padding: 20px 10px;
+    text-align: right;
 }

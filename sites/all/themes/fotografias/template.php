@@ -14,6 +14,13 @@ function fotografias_theme() {
     'path' => drupal_get_path('theme', 'fotografias') . '/templates',
     'template' => 'user-pass',
   );
+
+  $items['user_profile_form'] = array(
+    'render element' => 'form',
+    'path' => drupal_get_path('theme', 'fotografias') . '/templates',
+    'template' => 'user-profile-form',
+  );
+  
   return $items;
 }
 
@@ -28,6 +35,11 @@ function fotografias_form_alter( &$form, &$form_state, $form_id ) {
   if (TRUE === in_array($form_id, array( 'user_pass'))){
     $form['name']['#attributes']['placeholder'] = t('Nombre de usuario o dirección de correo');
   }
+
+  /*if (TRUE === in_array($form_id, array( 'user_profile_form'))){
+    $form['pass1']['#attributes']['placeholder'] = t('Nueva contraseña');
+    $form['pass2']['#attributes']['placeholder'] = t('Confirmar contraseña');
+  }*/
 }
 
 function fotografias_preprocess_page(&$variables){
