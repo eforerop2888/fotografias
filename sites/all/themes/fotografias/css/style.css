@@ -16,6 +16,10 @@ body{
     height: 100%;
 }
 
+.page-user .overlay_gallery_wrapper{
+  background: rgba(255, 255, 255, 0.78) none repeat scroll 0 0;    
+}
+
 .nav_photos{
     text-align: center;
     background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
@@ -56,6 +60,7 @@ body #space{
     background-color: #fff;
     padding: 10px;
     margin: 20% 0;
+
 }
 
 .acceso_denegado{
@@ -569,5 +574,4 @@ div.password-confirm{
 .div_boton_tags{
     background: #fff none repeat scroll 0 0;
     padding: 20px 10px;
-    text-align: right;
 }
