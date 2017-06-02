@@ -14,7 +14,7 @@ function gallery_access_menu(){
     'type' => MENU_CALLBACK
   );
 
-  $items['galerias/download_img'] = array(
+  $items['download_img'] = array(
     'title' => 'Descargar Imagen',
     'page callback' => 'gallery_access_download',
     'access callback' => true,
@@ -69,7 +69,7 @@ function gallery_access_views_pre_render(&$view){
 
 function gallery_access_download(){
   global $user;
-  $url = $_GET['url'];
+  $url = $_GET['url_download'];
 
   //Se implementa API de evento log para crear nuevo tipo de log de descarga de archivo
   $log = array(

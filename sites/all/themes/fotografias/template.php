@@ -47,5 +47,10 @@ function fotografias_preprocess_page(&$variables){
   if(user_is_logged_in() && current_path() == 'user/' . $user->uid){
     drupal_goto('galerias');
   }
+
+  if (isset($_GET['url']) != '') {
+    global $base_url;
+    header('Location: ' . url($base_url . '/download_img?url_download=' . $_GET['url']));
+  }
 }
 
