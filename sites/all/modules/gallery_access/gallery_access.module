@@ -106,4 +106,3 @@ function gallery_access_user_login(&$edit, $account){
     drupal_goto('admin/galerias_admin');
   }
 }
-

@@ -163,6 +163,7 @@ function add_favorite($fid){
 }
 
 function update_favorite($fid, $nid){
+  global $user;
   $node = node_load($nid);
   $file = file_load($fid);
 

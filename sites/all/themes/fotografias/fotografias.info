@@ -5,12 +5,15 @@ core = 7.x
 
 stylesheets[all][] = /css/resetHTML5.css
 stylesheets[all][] = /dist/css/bootstrap.min.css
+stylesheets[all][] = /css/jquery-fullsizable-theme.css
+stylesheets[all][] = /css/jquery-fullsizable.css
+stylesheets[all][] = /css/font-awesome/css/font-awesome.min.css
 stylesheets[all][] = /css/style.css
 
 scripts[] = dist/js/bootstrap.min.js
-scripts[] = js/jquery.fullscreen.min.js
 scripts[] = js/jquery-ui-1.9.2.custom.min.js
 scripts[] = js/jquery-sortable-photos.js
+scripts[] = js/jquery-fullsizable.min.js
 scripts[] = js/main.js
 
 regions[menu] = Menu
