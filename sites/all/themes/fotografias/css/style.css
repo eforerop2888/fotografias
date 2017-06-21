@@ -17,7 +17,7 @@ body{
 }
 
 .page-user .overlay_gallery_wrapper{
-  background: rgba(255, 255, 255, 0.78) none repeat scroll 0 0;    
+  background: rgba(255, 255, 255, 0.60) none repeat scroll 0 0;    
 }
 
 .nav_photos{
@@ -26,9 +26,8 @@ body{
     /*background-image: url('../images/paisaje.jpg');
     background-position: center;*/
     padding: 2px 40px;
-    position: fixed;
+    display: inline-block;
     width: 100%;
-    z-index: 10;
 }
 
 #GeneralContent{
@@ -250,11 +249,12 @@ body #space{
 
 .leyend_cover {
     bottom: 0;
-    position: absolute;
+    //position: absolute;
     width: 100%;
     color: #fff;
     padding: 20px 50px;
     background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    margin-top: 3em;
 
 }
 
@@ -275,7 +275,7 @@ body.page-galerias-favoritos #space{
     padding: 0;
 }
 
-.image_cover{
+/*.image_cover{
     height: 60vh;
     position: relative;
 }
@@ -294,7 +294,7 @@ body.page-galerias .view-header{
     min-height: 100%;
     transform: translate3d(0px, 0px, 0px);
     width: 100%;
-}
+}*/
 
 body.page-galerias- .view-galeria-cliente .view-content, 
 body.page-galerias-todas .view-galeria-fotos-todas .view-content,
@@ -439,6 +439,7 @@ ul.cloud li{
         background: none;
         width: 100%;
     }
+
 }
 @media screen and (min-width: 481px) and (max-width:768px) {
     .views-row.col-lg-4{
@@ -447,7 +448,7 @@ ul.cloud li{
         border: none;
         background: none;
         width: 50%; 
-  }
+    }
 }
 @media screen and (min-width: 769px) and (max-width: 992px) {
     .views-row.col-lg-4{
@@ -457,6 +458,14 @@ ul.cloud li{
         background: none;
         width: 33%;
     }
+    .view-id-galerias .view-content,
+    .view-id-galeria_cliente .view-content,
+    .view-id-galeria_fotos_todas .view-content,
+    .view-id-favoritos .view-content,
+    .div_boton_tags{
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 @media screen and (min-width: 992px){
     .views-row.col-lg-4{
@@ -465,6 +474,14 @@ ul.cloud li{
         border: none;
         background: none;
         width: 25%;
+    }
+    .view-id-galerias .view-content,
+    .view-id-galeria_cliente .view-content,
+    .view-id-galeria_fotos_todas .view-content,
+    .view-id-favoritos .view-content,
+    .div_boton_tags{
+        width: 87%;
+        margin: 0 auto;
     }
 }
 
@@ -573,5 +590,13 @@ div.password-confirm{
 
 .div_boton_tags{
     background: #fff none repeat scroll 0 0;
-    padding: 20px 10px;
+    padding: 20px 0;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.no-padding .overlay_gallery_wrapper{
+    margin: 0;
 }

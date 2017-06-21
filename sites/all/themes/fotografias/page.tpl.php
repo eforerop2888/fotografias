@@ -90,7 +90,7 @@ print $breadcrumb;
       <?php endif; ?>
     <?php endif; ?>
   </nav>
-  <div id="space"></div>
+  <!--<div id="space"></div>-->
   <div id="cabecera" class="row">
     <?php if ($page['header']): ?>
       <div id="header">
