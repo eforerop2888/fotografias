@@ -1,4 +1,3 @@
-
 jQuery = jQuery.noConflict();
 
 jQuery(document).ready(function () {
@@ -12,17 +11,16 @@ jQuery(document).ready(function () {
     });
 
     jQuery('div.fullscreen a').fullsizable({
-	  //reloadOnOpen: true,
 	  loop: true
 	});
 
     jQuery(document).ajaxComplete(function() {
-	//jQuery('.pager-show-more-next a').click(function() {
-		//alert("fds");
-      	jQuery('div.fullscreen a').fullsizable({
-		  	//reloadOnOpen: true,
-		  	loop: true
-		});
+    	if(!jQuery('#jquery-fullsizable').length){
+      		jQuery('div.fullscreen a').fullsizable({
+		  		loop: true,
+		  		loadOptions: false
+			});
+		}
     });
 
 	jQuery(document).on('click','#fullsized_playgallery',function(e) {
@@ -41,17 +39,21 @@ jQuery(document).ready(function () {
 		jQuery('#fullsized_stopgallery').replaceWith('<a id="fullsized_playgallery" href="#playgallery"><i class="fa fa-play-circle fa-2x" aria-hidden="true"></i></a>');
 	});
 
+	jQuery(document).on('click','#fullsized_favoritegallery a',function(e) {
+		e.stopPropagation();
+	});
+
 	jQuery(document).on('click','#fullsized_image_holder img',function(e) {
 		e.stopPropagation();		
 	});
-    
-	function playGallery(){
-		jQuery('#fullsized_go_next').click();
-	}
 
 	jQuery(document).on('click','#fullsized_downloadgallery',function(e) {
 		e.stopPropagation();
 		var imgUrl = jQuery('#fullsized_image_holder img').attr('src');
 		jQuery('#fullsized_downloadgallery').attr('href', 'download_img?url=' + imgUrl);
 	});
+
+	function playGallery(){
+		jQuery('#fullsized_go_next').click();
+	}
 });

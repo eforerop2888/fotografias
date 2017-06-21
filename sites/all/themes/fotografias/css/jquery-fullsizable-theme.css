@@ -20,7 +20,7 @@
   background-position: -32px -126px;
 }
 #fullsized_close, #fullsized_fullscreen, #fullsized_playgallery, #fullsized_stopgallery,
-#fullsized_downloadgallery {
+#fullsized_downloadgallery, #fullsized_favoritegallery {
   position: absolute;
   top: 5px;
   display: block;
@@ -56,3 +56,12 @@
   right: 120px;
 }
 
+#fullsized_favoritegallery{
+  right: 160px;
+}
+
+#fullsized_favoritegallery .favorito_icono{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}

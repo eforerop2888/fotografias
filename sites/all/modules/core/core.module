@@ -157,9 +157,11 @@ function add_favorite($fid){
 
   node_save($node);
 
-  $commands[] = ajax_command_replace('.output-favorite-' . $fid . ' span', '<span class="favorito_icono_noclic favorito_icono"></span>');
+  /*$commands[] = ajax_command_replace('.output-favorite-' . $fid . ' span', '<span class="favorito_icono_noclic favorito_icono"></span>');
   $page = array('#type' => 'ajax', '#commands' => $commands);
-  ajax_deliver($page);
+  ajax_deliver($page);*/
+  print '<span class="favorito_icono_noclic favorito_icono"></span>';
+  drupal_exit();
 }
 
 function update_favorite($fid, $nid){
@@ -178,9 +180,11 @@ function update_favorite($fid, $nid){
 
   node_save($node);
 
-  $commands[] = ajax_command_replace('.output-favorite-' . $fid . ' span', '<span class="favorito_icono_noclic favorito_icono"></span>');
+  /*$commands[] = ajax_command_replace('.output-favorite-' . $fid . ' span', '<span class="favorito_icono_noclic favorito_icono"></span>');
   $page = array('#type' => 'ajax', '#commands' => $commands);
-  ajax_deliver($page);
+  ajax_deliver($page);*/
+  print '<span class="favorito_icono_noclic favorito_icono"></span>';
+  drupal_exit();
 }
 
 function delete_favorite($fid, $nid){
@@ -196,16 +200,20 @@ function delete_favorite($fid, $nid){
     ->condition('bundle', 'favoritos','=')
     ->execute();
 
-  $commands[] = ajax_command_replace('.output-favorite-' . $fid . ' span', '<span class="favorito_icono_clic favorito_icono"></span>');
+  /*$commands[] = ajax_command_replace('.output-favorite-' . $fid . ' span', '<span class="favorito_icono_clic favorito_icono"></span>');
   $page = array('#type' => 'ajax', '#commands' => $commands);
-  ajax_deliver($page);
+  ajax_deliver($page);*/
+  print '<span class="favorito_icono_clic favorito_icono"></span>';
+  drupal_exit();
 }
 
 function core_views_pre_render(&$view){
   //if ($current_path == "galerias/todas") {
-    drupal_add_library('system', 'drupal.ajax');
-    drupal_add_library('system', 'jquery.form');
+  //drupal_add_library('system', 'drupal.ajax');
+  //drupal_add_library('system', 'jquery.form');
+    drupal_add_js(drupal_get_path('module', 'core') . '/js/favorite.js');
   //}
+  
 }
 
 function core_taxonomy_term_presave($term) {
@@ -234,4 +242,3 @@ function core_taxonomy_term_presave($term) {
   $original = taxonomy_term_load($tid);
   $term->original = $original;
 }
-
