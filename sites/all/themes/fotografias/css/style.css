@@ -462,6 +462,7 @@ ul.cloud li{
     .view-id-galeria_cliente .view-content,
     .view-id-galeria_fotos_todas .view-content,
     .view-id-favoritos .view-content,
+    .view-id-fotos_tags .view-content,
     .div_boton_tags{
         width: 90%;
         margin: 0 auto;
@@ -478,6 +479,7 @@ ul.cloud li{
     .view-id-galerias .view-content,
     .view-id-galeria_cliente .view-content,
     .view-id-galeria_fotos_todas .view-content,
+    .view-id-fotos_tags .view-content,
     .view-id-favoritos .view-content,
     .div_boton_tags{
         width: 87%;
